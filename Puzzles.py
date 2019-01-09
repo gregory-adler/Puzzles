@@ -41,7 +41,7 @@ def sockMerchant(n, ar):
 	return pairs
 
 
-def jumpingOnClouds(c):
+def jumpingOnClouds(c): 
     counter = 0
     switch = False
     for i in range (0, (len (c)-1)):
@@ -61,5 +61,30 @@ def jumpingOnClouds(c):
     return counter
 
 
+
+def repeatedString(s, n):
+	if (s== 'a'):
+		return n
+	istring = ''
+	multiplier = int(n/(len(s))) +1
+	array = []
+	print (multiplier)
+	counter =0
+
+	for i in range (0, multiplier):
+		array.append(s)
+
+	istring = istring.join(array)
+	print (len(istring))
+	while (len(istring) > n):
+		istring = istring[:-1]
+	print (istring)
+
+	for letter in istring:
+		if letter == 'a':
+			counter+=1
+
+	return counter
+
 c =(0,0,0,0,1,0)
-print cloudJumping(c)
+print jumpingOnClouds(c)
