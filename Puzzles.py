@@ -11,7 +11,7 @@ def countingValleys(n, s):
 	 	 	if count ==-1:
 	 	 		valley +=1
 
-	 return valley
+	return valley
 
 	# print "count: " + str(count)
 
@@ -20,5 +20,46 @@ def countingValleys(n, s):
 
 def sockMerchant(n, ar):
 
-	print n
-	print ar
+ 	pairs = 0 
+ 	p = {}
+ 	index = 0 
+
+	for i in range (0, len(ar)):
+		index = ar[i]
+		print ("index", index)
+		if index not in p:
+			p[index] = 1
+			print ("new")
+		else:
+			print ("additional")
+			p[index] +=1
+			print ("math")
+			print ((p[index]/2))
+			if ((p[index] % 2) == 0):
+				pairs +=1
+
+	return pairs
+
+
+def jumpingOnClouds(c):
+    counter = 0
+    switch = False
+    for i in range (0, (len (c)-1)):
+        print ("i", i)
+        if (switch):
+            switch = False
+            print ("continuing")
+            continue
+        if len(c) > i+2 and c[i+2] == 0:
+            print ("skip two")
+            switch = True
+        else:
+            print ("skip one")
+        print ("step")
+        counter +=1
+
+    return counter
+
+
+c =(0,0,0,0,1,0)
+print cloudJumping(c)
