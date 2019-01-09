@@ -98,7 +98,28 @@ def rotateArrayLeft(a,d):
 	else:
 		newArray[difference] = a[i]
 
-	return newArray
+	return newArrayj
+
+def hashOfHash(magazine, note):
+	hashTable = {}
+	answer = "Yes"
+	
+	for i in magazine:
+		if i in hashTable:
+			hashTable[i]+=1
+		else:
+			hashTable[i] = 1
+
+	for j in note:
+		if j in hashTable:
+			if hashTable[j]>0:
+				hashTable[j]-=1
+			else:
+				answer = "No"
+		else: 
+			answer = "No"
+			
+	print (answer)
 
 c =(0,0,0,0,1,0)
 print jumpingOnClouds(c)
