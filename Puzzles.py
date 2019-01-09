@@ -118,8 +118,15 @@ def hashOfHash(magazine, note):
 				answer = "No"
 		else: 
 			answer = "No"
-			
+
 	print (answer)
+
+def twoStrings(s1, s2):
+	for j in s1:
+		if j in s2:
+			return "YES"
+
+	return ("NO")
 
 c =(0,0,0,0,1,0)
 print jumpingOnClouds(c)
