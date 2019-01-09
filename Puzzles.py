@@ -86,5 +86,19 @@ def repeatedString(s, n):
 
 	return counter
 
+def rotateArrayLeft(a,d):
+	newArray = [-1] * len(a)
+	difference = 0
+	for i in range (0, len(a)):
+		difference = i-d
+	if difference <0:
+		index = difference + len(a)
+		print ("index", index)
+		newArray[index] = a[i]
+	else:
+		newArray[difference] = a[i]
+
+	return newArray
+
 c =(0,0,0,0,1,0)
 print jumpingOnClouds(c)
