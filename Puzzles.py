@@ -128,5 +128,74 @@ def twoStrings(s1, s2):
 
 	return ("NO")
 
+
+def makeAnagram(a, b):
+	dict1 = {}
+	dict2 = {}
+	counter = 0
+	deleteKeys = []
+
+	for item in a:
+		if item in dict1:
+			dict1[item]+=1
+		else:
+			dict1[item] =1
+
+	for item in b:
+		if item in dict2:
+			dict2[item]+=1
+		else:
+			dict2[item] = 1
+
+
+	print ("dict1: ", dict1)
+	print ("dict2:" , dict2)
+
+
+	print ("loop")
+	for key in dict1.keys():
+		print ("key", key)
+		if key in dict2:
+			print ("same")
+			if dict1[key] == dict2[key]:
+				print ("match")
+				continue
+			elif dict1[key] > dict2[key]:
+				while dict1[key] > dict2[key]:
+					print ("minus one")
+					dict1[key]-=1
+					counter +=1
+		else:
+			print ("no match")
+			counter +=dict1[key]
+			deleteKeys.append(key)
+
+	for key in deleteKeys:
+		del (dict1[key])
+		deleteKeys = []
+
+	print ("loop 2")
+	for key in dict2.keys():
+		print ("key", key)
+		if key in dict1:
+			print ("same")
+			if dict1[key] == dict2[key]:
+				print ("match")
+				continue
+			elif dict2[key] > dict1[key]:
+				while dict2[key] > dict1[key]:
+					print ("minus one")
+					dict2[key]-=1
+					counter +=1
+		else:
+			print ("no match")
+			counter +=dict2[key]
+			deleteKeys.append(key)
+
+	for key in deleteKeys:
+		del (dict2[key])
+
+	return counter
+
 c =(0,0,0,0,1,0)
 print jumpingOnClouds(c)
