@@ -257,7 +257,28 @@ def alternatingCharacters(s):
 		else:
 			boolean =False
 	return counter
-	
+
+
+def whatFlavors(cost, money):
+	solutions = {}
+	for i in range (0, len(cost)):
+		compliment = money - cost[i]
+		if (compliment == cost[i]):
+			#print ("same compliment", compliment)
+			for j in range (i+1, len(cost)):
+				if cost[j] == cost[i]:
+					#print ("solution")
+					print (i+1, j+1)
+					return
+		else: 
+			solutions[compliment] = i
+
+	for i in range (0, len(cost)):
+		if cost[i] in solutions:
+			print (i+1, (solutions[cost[i]]+1))
+	return
+
+
 
 c =(0,0,0,0,1,0)
 print jumpingOnClouds(c)
