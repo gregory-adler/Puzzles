@@ -239,5 +239,25 @@ def countSwaps(a):
 	print ("First Element:", a[0])
 	print ("Last Element:", a[-1])
 
+
+def alternatingCharacters(s):
+	print (s)
+	boolean = True
+	counter =0
+	i = 0
+	while (boolean):
+		if len(s) > i+1:
+			if s[i] == s[i+1]:
+				counter+=1
+				i+=1
+			#two fine
+			else:
+				i+=1
+		#done iterating
+		else:
+			boolean =False
+	return counter
+	
+
 c =(0,0,0,0,1,0)
 print jumpingOnClouds(c)
