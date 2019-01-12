@@ -210,10 +210,34 @@ def hourglassSum(arr):
 				print ("localSum", localSum)
 				if localSum > maxSum:
 				    maxSum = localSum
-				localSum = 0
+				    localSum = 0
 				else: 
 					print ("next")
 	return maxSum
+
+
+def countSwaps(a):
+	counter =0
+	status = True
+
+	while (status):
+		temp = 0
+		for i in range (0, len(a)-1):
+			#print ("array:", a)
+			#print (a[i])
+			# swap
+			if (a[i+1] < a[i]):
+				#print ("swap")
+				a[i+1], a[i] = a[i], a[i+1]
+				counter +=1
+				temp +=1
+		if (temp ==0):
+			#print ("done")
+			status = False
+
+	print ("Array is sorted in", counter, "swaps.")
+	print ("First Element:", a[0])
+	print ("Last Element:", a[-1])
 
 c =(0,0,0,0,1,0)
 print jumpingOnClouds(c)
