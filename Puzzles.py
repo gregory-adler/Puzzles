@@ -197,5 +197,23 @@ def makeAnagram(a, b):
 
 	return counter
 
+def hourglassSum(arr):
+	localSum = 0
+	maxSum = -50
+	for i in range (0, len(arr)):
+		print (arr[i])
+		for j in range (0, len(arr[i])):
+			if (i+2 <len(arr) and j+2 < len(arr[i])):
+				print ("hourglass")
+				print (arr[i][j], arr[i][j+1], arr[i][j+2],arr[i+1][j] ,arr[i+2][j+1] ,arr[i+2][j+1] ,arr[i+2][j+2])
+				localSum = arr[i][j] + arr[i][j+1] + arr[i][j+2] + arr[i+1][j+1] + arr[i+2][j] + arr[i+2][j+1] + arr[i+2][j+2]
+				print ("localSum", localSum)
+				if localSum > maxSum:
+				    maxSum = localSum
+				localSum = 0
+				else: 
+					print ("next")
+	return maxSum
+
 c =(0,0,0,0,1,0)
 print jumpingOnClouds(c)
