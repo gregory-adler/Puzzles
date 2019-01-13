@@ -279,6 +279,40 @@ def whatFlavors(cost, money):
 	return
 
 
+def primality(n):
+    if (n==1):
+        return "Not prime"
+    for i in range (2, n):
+        if (n % i ==0):
+            return "Not prime"
+        if (i>1001):
+            return "Prime"
+    
+    return "Prime"
+
+
+def maxSubsetSum(arr):
+	maxSum = 0
+	bestSolution = [None] * len(arr)
+	# print (bestSolution)
+
+	for i in range (0, len(arr)):
+		if (i >= 3 and bestSolution[i-2]!= None and bestSolution[i-3]!= None):
+			bestSolution[i] = max(bestSolution[i-2], bestSolution[i-3]) + max(0, arr[i])
+		elif (i >= 2 and bestSolution[i-2]!= None):
+			#print ("iterating solution")
+			#print (bestSolution[i-2])
+			bestSolution[i] =bestSolution[i-2] + max(0, arr[i])
+		else:
+			bestSolution[i] = max(0, arr[i])
+
+	# print (bestSolution)
+
+	for item in bestSolution:
+		if item > maxSum:
+			maxSum = item
+
+	return maxSum
 
 c =(0,0,0,0,1,0)
 print jumpingOnClouds(c)
