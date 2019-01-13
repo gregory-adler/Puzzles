@@ -1,3 +1,5 @@
+import itertools
+
 def countingValleys(n, s):
 
 	n = len(s)
@@ -330,8 +332,33 @@ def minimumAbsoluteDifference(arr):
 		difference = abs(sortedArr[i+1] - sortedArr[i])
 	if difference < answer:
 	    answer = difference
+	return answer
+
+
+def luckBalance(k, contests):
+	answer =0
+	important = []
+
+	for item in contests:
+		if item[1] == 0:
+			answer+= item[0]
+		else:
+			important.append(item[0])
+			important = sorted (important, reverse = True)
+
+
+	for i in range (0, len(important)):
+		if i < k:
+			answer += important[i]
+		else:
+			answer -= important[i]
 
 	return answer
 
 c =(0,0,0,0,1,0)
 print jumpingOnClouds(c)
+
+stuff = [1,2,3,4,5]
+for i in range (0, len(stuff)+1):
+	for item in (itertools.combinations(stuff,i)):
+		print (item)
