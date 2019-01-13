@@ -314,5 +314,11 @@ def maxSubsetSum(arr):
 
 	return maxSum
 
+def height(root):
+    if root == None:
+        return -1
+    else:
+        return 1 + max(height(root.left), height(root.right))
+
 c =(0,0,0,0,1,0)
 print jumpingOnClouds(c)
