@@ -320,5 +320,18 @@ def height(root):
     else:
         return 1 + max(height(root.left), height(root.right))
 
+
+
+def minimumAbsoluteDifference(arr):
+	sortedArr = sorted(arr)
+	answer = abs(sortedArr[-1] - sortedArr[0])
+	print (sortedArr)
+	for i in range (0, len(arr)-1):
+		difference = abs(sortedArr[i+1] - sortedArr[i])
+	if difference < answer:
+	    answer = difference
+
+	return answer
+
 c =(0,0,0,0,1,0)
 print jumpingOnClouds(c)
