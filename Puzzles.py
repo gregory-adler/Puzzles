@@ -368,7 +368,25 @@ def getCombinations(list, n):
 		for item in (itertools.combinations(list,i)):
 			print (item)
 
+def stepPerms(n):
+	count = recursion(0, n)
+	return count
+
+
+def recursion(height,n):
+	if height == n:
+		return 1
+	elif height > n:
+		return 0
+	else:
+		return recursion(height +1 ,n) + recursion(height +2 ,n) + recursion(height+3,n)
+
+
 c =(0,0,0,0,1,0)
 print jumpingOnClouds(c)
 
 stuff = [1,2,3,4,5]
+
+stuff.append(6)
+
+print stuff
