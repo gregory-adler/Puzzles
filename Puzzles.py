@@ -28,15 +28,15 @@ def sockMerchant(n, ar):
 
 	for i in range (0, len(ar)):
 		index = ar[i]
-		print ("index", index)
+		#print ("index", index)
 		if index not in p:
 			p[index] = 1
-			print ("new")
+			#print ("new")
 		else:
-			print ("additional")
+			#print ("additional")
 			p[index] +=1
-			print ("math")
-			print ((p[index]/2))
+			#print ("math")
+			#print ((p[index]/2))
 			if ((p[index] % 2) == 0):
 				pairs +=1
 
@@ -47,17 +47,18 @@ def jumpingOnClouds(c):
     counter = 0
     switch = False
     for i in range (0, (len (c)-1)):
-        print ("i", i)
+        #print ("i", i)
         if (switch):
             switch = False
-            print ("continuing")
+           # print ("continuing")
             continue
         if len(c) > i+2 and c[i+2] == 0:
-            print ("skip two")
+            #print ("skip two")
             switch = True
         else:
-            print ("skip one")
-        print ("step")
+        	continue
+           # print ("skip one")
+        #print ("step")
         counter +=1
 
     return counter
@@ -70,17 +71,17 @@ def repeatedString(s, n):
 	istring = ''
 	multiplier = int(n/(len(s))) +1
 	array = []
-	print (multiplier)
+	# print (multiplier)
 	counter =0
 
 	for i in range (0, multiplier):
 		array.append(s)
 
 	istring = istring.join(array)
-	print (len(istring))
+	# print (len(istring))
 	while (len(istring) > n):
 		istring = istring[:-1]
-	print (istring)
+	# print (istring)
 
 	for letter in istring:
 		if letter == 'a':
@@ -362,10 +363,12 @@ def fibonacci(n):
 		return 1
 	return fibonacci(n-1) + fibonacci (n-2)	
 
+def getCombinations(list, n):
+	for i in range (0, len(list)+1):
+		for item in (itertools.combinations(list,i)):
+			print (item)
+
 c =(0,0,0,0,1,0)
 print jumpingOnClouds(c)
 
 stuff = [1,2,3,4,5]
-for i in range (0, len(stuff)+1):
-	for item in (itertools.combinations(stuff,i)):
-		print (item)
