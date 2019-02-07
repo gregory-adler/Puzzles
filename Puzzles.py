@@ -382,6 +382,22 @@ def recursion(height,n):
 		return recursion(height +1 ,n) + recursion(height +2 ,n) + recursion(height+3,n)
 
 
+def insertNodeAtPosition(head, data, position):
+	currentNode = head
+	counter = 0 
+	print ("position", position, "data", data)
+	while (currentNode.next!=None):
+		counter +=1 
+		if (counter == position):
+			temp = currentNode.next
+			newNode = SinglyLinkedListNode(data)
+			currentNode.next = newNode
+			newNode.next = temp
+		currentNode = currentNode.next
+
+	return head
+
+
 c =(0,0,0,0,1,0)
 print jumpingOnClouds(c)
 
